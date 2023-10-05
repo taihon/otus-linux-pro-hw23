@@ -1,0 +1,14 @@
+- name: copy vlan template
+  become: yes
+  ansible.builtin.template:
+    src: ifcfg-vlan.j2
+    dest: "/etc/sysconfig/network-scripts/ifcfg-vlan{{vlan_id}}"
+    owner: root
+    group: root
+    mode: 0644
+- name: restart network for vlan {{vlan_id}}
+  become: yes
+  ansible.builtin.service:
+    name: NetworkManager
+    state: restarted
+  

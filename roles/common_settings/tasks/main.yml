@@ -1,0 +1,10 @@
+---
+- name: Install debugging software
+  become: yes
+  ansible.builtin.yum:
+    name:
+      - traceroute
+      - tcpdump
+      - net-tools
+    state: present
+    update_cache: true

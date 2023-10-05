@@ -24,3 +24,10 @@ https://docs.google.com/document/d/1BO5cUT0u4ABzEOjogeHyCaNiYh76Bh73/edit?usp=sh
 Формат сдачи: Vagrantfile + ansible
 
 **_Решение_**
+Стенд построен с использованием vagrant и ansible.
+Для развёртывания необходимо выполнить:
+```
+vagrant up
+ansible-playbook playbook.yml
+```
+Для проверки работы bond во время запущенного ping 192.168.255.1 с centralRouter на inetRouter был выключен eth1. Пинг при этом не прерывался, а значит bond работает.

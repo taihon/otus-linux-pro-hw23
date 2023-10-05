@@ -1,0 +1,10 @@
+---
+- hosts: all
+  roles:
+    - common_settings
+- hosts: bondedservers
+  roles:
+    - setup_bond
+- hosts: clientservervlans
+  roles:
+    - setup_vlans
